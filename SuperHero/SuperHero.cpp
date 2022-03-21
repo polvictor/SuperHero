@@ -9,7 +9,6 @@ protected:
 	char* abilityname;
 public:
 	virtual void Show() = 0;
-	virtual void ShowAbility() = 0;
 	virtual void Ability1() = 0;	
 };
 class SuperFly abstract : public Ability
@@ -76,6 +75,7 @@ public:
 	}
 	virtual void Ability1() override 
 	{
+		cout << "SuperHero have SuperStength and having superhuman abilities" << endl;
 	}
 };
 class Tor : public SuperHero, public Human, public SuperStrength
@@ -87,7 +87,14 @@ public:
 		cout << "Ñourage, valor" << endl;
 		cout << "Have protected magic hammer" << endl;
 	}
-	virtual void Ability1() override {}
+	virtual void Ability1() override 
+	{
+		cout << "SuperHero have SuperStength and having superhuman abilities" << endl;
+	}
+	virtual void Activity() override
+	{
+		cout << "Tor" << endl;
+	}
 };
 class Hulk : public SuperHero, public Human, public SuperStrength
 {
@@ -98,7 +105,14 @@ public:
 		cout << "Huge, ungovernable, evil" << endl;
 		cout << "Green Monster" << endl;
 	}
-	virtual void Ability1() override {}
+	virtual void Ability1() override 
+	{
+		cout << "SuperHero have SuperStength and having superhuman abilities" << endl;
+	}
+	virtual void Activity() override
+	{
+		cout << "Hulk" << endl;
+	}
 };
 class SpiderMan : public SuperHero, public Human, public SuperStrength
 {
@@ -112,6 +126,10 @@ public:
 	virtual void Ability1() override 
 	{
 		cout << "SuperHero have SuperStength and can climb by sheer wall" << endl;
+	}
+	virtual void Activity() override
+	{
+		cout << "SpiderMan" << endl;
 	}
 };
 class Wolverine : public SuperHero, public Animal, public SuperStrength
@@ -127,6 +145,10 @@ public:
 	{
 		cout << "SuperHero have SuperStength and having superhuman abilities" << endl;
 	}
+	virtual void Activity() override
+	{
+		cout << "Rossomaha" << endl;
+	}
 };
 class Groot : public SuperHero, public Deity, public SuperStrength
 {
@@ -138,14 +160,21 @@ public:
 	}
 	virtual void Ability1() override
 	{
-		
+		cout << "SuperHero have SuperStength and having superhuman abilities" << endl;
+	}
+	virtual void Activity() override
+	{
+		cout << "Groot" << endl;
 	}
 };
 
-
 int main()
 {
-	Wolverine w;
-	w.Ability1();
-
+	Wolverine wvr;
+	wvr.Show();
+	wvr.Ability1();
+	wvr.Activity();
+	Groot grt;
+	grt.Show();
+	grt.Activity();	
 }
